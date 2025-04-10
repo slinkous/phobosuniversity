@@ -1,3 +1,6 @@
 [submodule "bundles/telnet-networking"]
 	path = bundles/telnet-networking
 	url = https://github.com/ranviermud/telnet-networking
+[submodule "bundles/websocket-networking"]
+	path = bundles/websocket-networking
+	url = https://github.com/slinkous/websocket-networking
