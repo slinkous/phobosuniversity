@@ -1,0 +1,46 @@
+- id: airlock
+  title: "The Airlock"
+  description: "You find yourself floating in a cozy, brightly lit cylinder, rotating slowly in the zero gravity. As you turn, you see a small porthole at your feet, showing the black void of space, and above your head is a circular door, with handles framing it and a big red button that just lit up, inviting you to enter. The Phobos University logo is stenciled on the wall."
+  exits:
+    - roomId: "station:shaft"
+      direction: button
+      leaveMessage: " presses a button and floats into Phobos University Station"
+- id: shaft
+  title: "Central Access Shaft"
+  description: >-
+    You grab a rung of a ladder that is running the length of a dark access tube to keep yourself from floating away in the zero gravity. Opposite the ladder is a pair of seats with securing straps and interface to select a specific floor by color, matching the color of the lights you see illuminating each level.
+
+    Folks passing by you opt to grab onto either side of the conveyer belt of hand loops, letting themselves be pulled up (or down, it's zero grav, who knows) to their destinations. Particularly brave souls push off the walls and freefloat to their goals. At one end of the access tube is the air lock, and at the opposite, the large observation dome.
+  exits:
+    - roomId: "station:engineering-floor-yellow"
+      direction: yellow
+      leaveMessage: " grabs a hand loop and is gently towed to engineering"
+    - roomId: "station:commons-floor-magenta"
+      direction: magenta
+      leaveMessage: " grabs a hand loop and is gently towed to the commons area descent pod."
+    - roomId: "station:academic-floor-blue"
+      direction: blue
+    - roomId: "station:park-floor-green"
+      direction: green
+- id: commons-floor-cafeteria
+  title: Commons Floor
+  description: >-
+    The descent pod has two opposing doors that open out in the center of the cafeteria.
+- id: dormitories
+  title: "Dormitory Hallways"
+  description: >-
+    A brightly lit hallway curving away from you on both sides. In the d
+  exits:
+    - roomId: "station:dormitory-hall-left"
+      direction: left
+    - roomId: "station:dormitory-hall-right"
+      direction: antispinward
+- id: commons
+  title: "The Common Area"
+  description: >-
+    A completely black room. Somehow all of the light that should be coming from the room to the west does not pass
+    through the archway. A single lightbulb hangs from the ceiling illuminating a small area. To the east you see a
+    large white dome. There is a sign above the entrance to the dome: "Training Area"
+  exits:
+    - roomId: "station:cafeteria"
+      direction: forward
