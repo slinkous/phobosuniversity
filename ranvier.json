@@ -1,12 +1,12 @@
 {
   "port": 4000,
   "bundles": [
-    "telnet-networking",
     "tiny-input-events",
     "tiny-areas",
     "tiny-commands",
     "tiny-player-events",
-    "tiny-attributes"
+    "tiny-attributes",
+    "websocket-networking"
   ],
   "dataSources": {
     "YamlArea": {
