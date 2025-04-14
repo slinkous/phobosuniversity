@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://pixijs.download/release/pixi.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+    <div id="pixi-container" width="640" height="360"></div>
+    <div id="terminal" width="640" height="360"></div>
+    <form name="input-submit" id="input-submit">
+      <input type="text" name="terminal-input" value="">
+      <input type="submit" name="terminal-submit" value="Send">
+    </form>
+    <script type="module">
+      const app = new PIXI.Application();
+      await app.init({ width: 640, height: 360});
+      document.getElementById("pixi-container").appendChild(app.canvas);
+    </script>
+    <script type="text/javascript">
+      // Create WebSocket connection.
+      const socket = new WebSocket("ws://localhost:4001");
+      const terminalBox = document.getElementById("terminal")
+      terminalBox.style = "width:640; height:360; border:1px solid #ccc;overflow:auto;"
+      // const typeArea = document.getElementById("input-submit")
+      // typeArea.addEventListener("onsubmit", (event)=>{
+      //   console.log(event)
+      // });
+
+      // Connection opened
+      socket.addEventListener("open", (event) => {
+        socket.send("Hello Server!");
+      });
+
+      // Listen for messages
+      socket.addEventListener("message", (event) => {
+        console.log("Message from server ", event.data);
+        const data = JSON.parse(event.data)
+        if (data.type == "message"){
+          const node = document.createElement('pre')
+          const textnode = document.createTextNode(data.message)
+          node.appendChild(textnode)
+          terminalBox.appendChild(node);
+        }
+
+      });
+
+      document.getElementById("input-submit").addEventListener("submit", function(event){
+        event.preventDefault()
+        let x = document.forms["input-submit"]["terminal-input"].value;
+        console.log(x);
+        socket.send(x);
+      });
+    </script>
+  </body>
+</html>
