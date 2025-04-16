@@ -4,3 +4,6 @@
 [submodule "bundles/websocket-networking"]
 	path = bundles/websocket-networking
 	url = https://github.com/slinkous/websocket-networking
+[submodule "bundles/ranvier-progressive-respawn"]
+	path = bundles/ranvier-progressive-respawn
+	url = https://github.com/slinkous/ranvier-progressive-respawn
