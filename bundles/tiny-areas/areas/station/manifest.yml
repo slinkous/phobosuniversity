@@ -1,2 +1,5 @@
 ---
 title: Phobos University Station
+behaviors:
+   progressive-respawn:
+     interval: 300

@@ -25,11 +25,8 @@
       // Create WebSocket connection.
       const socket = new WebSocket("ws://localhost:4001");
       const terminalBox = document.getElementById("terminal")
-      terminalBox.style = "width:640; height:360; border:1px solid #ccc;overflow:auto;"
-      // const typeArea = document.getElementById("input-submit")
-      // typeArea.addEventListener("onsubmit", (event)=>{
-      //   console.log(event)
-      // });
+      terminalBox.style.height="360px";
+      terminalBox.style.overflowY="auto";
 
       // Connection opened
       socket.addEventListener("open", (event) => {
@@ -42,18 +39,27 @@
         const data = JSON.parse(event.data)
         if (data.type == "message"){
           const node = document.createElement('pre')
-          const textnode = document.createTextNode(data.message)
+          let message = data.message
+          const ansiExp = new RegExp("\x1b(?:[@-Z\\-_]|\[[0-?]*[ -/]*[@-~])", 'm')
+
+          message = message.replace(ansiExp, "")
+          console.log("message", message)
+          const textnode = document.createTextNode(message)
           node.appendChild(textnode)
           terminalBox.appendChild(node);
+          terminalBox.scrollTop = terminalBox.scrollHeight;
         }
 
       });
 
       document.getElementById("input-submit").addEventListener("submit", function(event){
         event.preventDefault()
-        let x = document.forms["input-submit"]["terminal-input"].value;
+        const textArea = document.forms["input-submit"]
+        const textBox = textArea["terminal-input"]
+        let x = textBox.value;
         console.log(x);
         socket.send(x);
+        textArea.reset()
       });
     </script>
   </body>

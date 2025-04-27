@@ -1,0 +1,16 @@
+- id: "prybar"
+  name: "Pry Bar"
+  type: WEAPON
+  roomDesc: "Pry Bar"
+  keywords: [ "bar", "tool", "metal", "pry" ]
+  description: "An arm's-length, jagged metal sword discolored with red corrosion. The worn leather grip barely held on by fraying thread."
+  metadata:
+    level: 1
+    slot: 'wield'
+    itemLevel: 1
+    quality: common
+    minDamage: 7
+    maxDamage: 15
+    speed: 2.8
+    stats:
+      critical: 1

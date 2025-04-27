@@ -26,6 +26,10 @@
   title: Commons Floor
   description: >-
     The descent pod has two opposing doors that open out in the center of the cafeteria.
+  items:
+    - id: station:prybar
+      respawnChange: 20
+      maxLoad: 3
   exits:
     - roomId: "station:commons"
       direction: spin
@@ -35,6 +39,6 @@
     A completely black room. Somehow all of the light that should be coming from the room to the west does not pass
     through the archway. A single lightbulb hangs from the ceiling illuminating a small area. To the east you see a
     large white dome. There is a sign above the entrance to the dome: "Training Area"
-  exits:
-    - roomId: "station:cafeteria"
-      direction: forward
+  # exits:
+  #   - roomId: "station:cafeteria"
+  #     direction: spin
