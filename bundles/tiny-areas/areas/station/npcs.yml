@@ -1,0 +1,18 @@
+---
+- id: rat
+  keywords: ['rat']
+  name: A Rat
+  level: 2
+  description: "The rat's beady red eyes dart frantically, its mouth foaming as it scampers about."
+  # script: 'rat'
+  # items: ['limbo:sliceofcheese']
+  # quests: ['limbo:onecheeseplease']
+  behaviors:
+    combat: true
+    ranvier-wander:
+      interval: 20
+      restrictTo: ['limbo:white', 'limbo:black', 'limbo:training1']
+  attributes:
+    health: 100
+    energy: 100
+---

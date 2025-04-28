@@ -1,9 +1,10 @@
+---
 - id: "prybar"
   name: "Pry Bar"
   type: WEAPON
   roomDesc: "Pry Bar"
   keywords: [ "bar", "tool", "metal", "pry" ]
-  description: "An arm's-length, jagged metal sword discolored with red corrosion. The worn leather grip barely held on by fraying thread."
+  description: "A handy metal tool with a flat, narrowed end. You could probably pry something with it."
   metadata:
     level: 1
     slot: 'wield'
@@ -14,3 +15,4 @@
     speed: 2.8
     stats:
       critical: 1
+---

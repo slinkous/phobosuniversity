@@ -1,3 +1,4 @@
+---
 - id: airlock
   title: "The Airlock"
   description: "You find yourself floating in a cozy, brightly lit cylinder, rotating slowly in the zero gravity. As you turn, you see a small porthole at your feet, showing the black void of space, and above your head is a circular door, with handles framing it and a big red button that just lit up, inviting you to enter. The Phobos University logo is stenciled on the wall."
@@ -42,3 +43,5 @@
   # exits:
   #   - roomId: "station:cafeteria"
   #     direction: spin
+
+  ---
