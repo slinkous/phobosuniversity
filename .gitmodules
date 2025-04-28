@@ -7,3 +7,6 @@
 [submodule "bundles/ranvier-progressive-respawn"]
 	path = bundles/ranvier-progressive-respawn
 	url = https://github.com/slinkous/ranvier-progressive-respawn
+[submodule "bundles/ranvier-npc-behaviors"]
+	path = bundles/ranvier-npc-behaviors
+	url = https://github.com/slinkous/ranvier-npc-behaviors
