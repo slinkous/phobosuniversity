@@ -1,8 +1,10 @@
 {
   "port": 4000,
   "bundles": [
-    "tiny-input-events",
     "tiny-areas",
+    "ranvier-npc-behaviors",
+    "ranvier-progressive-respawn",
+    "tiny-input-events",
     "tiny-commands",
     "tiny-player-events",
     "tiny-attributes",
